@@ -14,6 +14,12 @@ extension UIImageView {
             self.image = nil
             return
         }
+        
+        if let cachedImage = ImageCache.shared.object(forKey: url.absoluteString as NSString) {
+            self.image = cachedImage
+            return
+        }
+        
         URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -30,10 +36,18 @@ extension UIImageView {
                     } else {
                         self.image = image
                     }
+                    
+                    ImageCache.shared.setObject(image, forKey: url.absoluteString as NSString)
                 } else {
                     self.image = nil
                 }
             }
         }.resume()
     }
+}
+
+class ImageCache {
+    private init() {}
+    
+    static let shared = NSCache<NSString, UIImage>()
 }

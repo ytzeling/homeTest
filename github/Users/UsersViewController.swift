@@ -57,8 +57,8 @@ class UsersViewController: UIViewController {
         
         view.backgroundColor = .white
         view.addSubview(tableView)
-        view.addSubview(offlineIndicator)
         view.addSubview(shimmerView)
+        view.addSubview(offlineIndicator)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,9 +84,13 @@ class UsersViewController: UIViewController {
         searchBar.delegate = self
         navigationItem.titleView = searchBar
         
-        viewModel.onShowOfflineIndicator = { [weak self] show in
+        viewModel.onNetworkChanged = { [weak self] isOffline in
             DispatchQueue.main.async {
-                self?.offlineIndicator.isHidden = !show
+                self?.offlineIndicator.isHidden = !isOffline
+                
+                if (!isOffline) {
+                    self?.viewModel.refreshUsers()
+                }
             }
         }
         
@@ -103,6 +107,8 @@ class UsersViewController: UIViewController {
                 }
             }
         }
+        
+        viewModel.fetchUsers()
         
         NotificationCenter.default.addObserver(self, selector: #selector(contextSaved(_:)), name: Notification.Name.NSManagedObjectContextObjectsDidChange, object: nil)
     }

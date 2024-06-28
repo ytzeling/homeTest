@@ -27,8 +27,8 @@ class UsersViewModel: NSObject {
     var userCount: Int {
         return self.fetchedResultsController.fetchedObjects?.count ?? 0
     }
-        
-    var onShowOfflineIndicator: ((Bool) -> Void)?
+
+    var onNetworkChanged: ((Bool) -> Void)?
     var onReloadTable: (() -> Void)?
     
     let reachability = try! Reachability()
@@ -49,7 +49,6 @@ class UsersViewModel: NSObject {
         } catch {
             print(error.localizedDescription)
         }
-        fetchUsers()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
     }
@@ -90,6 +89,8 @@ class UsersViewModel: NSObject {
                     print(failure.localizedDescription)
                 }
             }
+        } else {
+            self.onReloadTable?()
         }
     }
     
@@ -129,7 +130,7 @@ class UsersViewModel: NSObject {
     @objc func reachabilityChanged(note: Notification) {
         let reachability = note.object as! Reachability
         
-        onShowOfflineIndicator?(reachability.connection == .unavailable)
+        onNetworkChanged?(reachability.connection == .unavailable)
     }
     
     func viewModel(for index: Int) -> TableViewCellModelProtocol? {

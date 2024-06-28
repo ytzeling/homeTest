@@ -156,7 +156,7 @@ class BaseCell: UITableViewCell, TableViewCellProtocol {
         detailLabel.text = data.note
         noteIcon.isHidden = data.hideNote
         
-        backgroundColor = data.seen ? .lightGray.withAlphaComponent(0.3) : .white
+        backgroundColor = data.seen ? .lightGray.withAlphaComponent(0.3) : .systemBackground
     }
     
 }

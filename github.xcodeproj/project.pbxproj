@@ -26,7 +26,7 @@
 		05144D3F2C088E7500D21FF9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05144D3E2C088E7500D21FF9 /* CoreDataStack.swift */; };
 		05144D4A2C09B64300D21FF9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05144D482C09B64300D21FF9 /* User+CoreDataClass.swift */; };
 		05144D4B2C09B64300D21FF9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05144D492C09B64300D21FF9 /* User+CoreDataProperties.swift */; };
-		0598764E2C0CECB3009A551E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0598764D2C0CECB3009A551E /* Profile.swift */; };
+		05314B6D2C2EAEB30032EDE7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05314B6C2C2EAEB30032EDE7 /* Profile.swift */; };
 		059876512C0CFC38009A551E /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 059876502C0CFC38009A551E /* Toast */; };
 		059876542C0CFF84009A551E /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 059876532C0CFF84009A551E /* Reachability */; };
 		059876562C0D06FB009A551E /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059876552C0D06FB009A551E /* OfflineView.swift */; };
@@ -78,7 +78,7 @@
 		05144D3E2C088E7500D21FF9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		05144D482C09B64300D21FF9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05144D492C09B64300D21FF9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0598764D2C0CECB3009A551E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		05314B6C2C2EAEB30032EDE7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		059876552C0D06FB009A551E /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		059876572C0F68A2009A551E /* GenericCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
 		059876592C0F8774009A551E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				05144D362C08547D00D21FF9 /* ProfileView.swift */,
 				05144D382C08549300D21FF9 /* ProfileViewController.swift */,
 				05144D3A2C08549F00D21FF9 /* ProfileViewModel.swift */,
-				0598764D2C0CECB3009A551E /* Profile.swift */,
+				05314B6C2C2EAEB30032EDE7 /* Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -337,13 +337,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				05144D342C08407F00D21FF9 /* ImageView+Extension.swift in Sources */,
-				0598764E2C0CECB3009A551E /* Profile.swift in Sources */,
 				05144D372C08547D00D21FF9 /* ProfileView.swift in Sources */,
 				05144D392C08549300D21FF9 /* ProfileViewController.swift in Sources */,
 				05144CFE2C0839AF00D21FF9 /* ViewController.swift in Sources */,
 				059876562C0D06FB009A551E /* OfflineView.swift in Sources */,
 				05144D2F2C083CAB00D21FF9 /* UsersViewModel.swift in Sources */,
 				05144D4A2C09B64300D21FF9 /* User+CoreDataClass.swift in Sources */,
+				05314B6D2C2EAEB30032EDE7 /* Profile.swift in Sources */,
 				05144D3F2C088E7500D21FF9 /* CoreDataStack.swift in Sources */,
 				059876582C0F68A2009A551E /* GenericCell.swift in Sources */,
 				05144D4B2C09B64300D21FF9 /* User+CoreDataProperties.swift in Sources */,

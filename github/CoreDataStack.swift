@@ -122,28 +122,4 @@ class CoreDataStack {
             }
         }
     }
-    
-    func storeUser(_ profile: Profile, username: String) {
-        persistentContainerQueue.addOperation {
-            self.persistentContainer.performBackgroundTask { context in
-                do {
-                    let fetchRequest = User.fetchRequest()
-                    fetchRequest.predicate = NSPredicate(format: "login == %@", username)
-                    
-                    if let user = try context.fetch(fetchRequest).first {
-                        user.company = profile.company
-                        user.name = profile.name
-                        user.followers = Int16(profile.followers)
-                        user.following = Int16(profile.following)
-                        
-                        try context.save()
-                    }
-                    
-                    
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-    }
 }
